@@ -1,0 +1,35 @@
+{% extends "./base/base.html" %} {% block content %}
+  <form
+    id="myform"
+    class="container-input"
+    hx-post="{% url 'toDo:toDo_create' %}"
+    hx-target="#taskList"
+    hx-indicator=".htmx-indicator"
+    hx-swap="afterbegin"
+  >
+    {% csrf_token %} {% for field in form %}
+      {{ field }} {{ field.errors }} {% if field.help_text %}
+      <small class="text-muted">{{ field.help_text|safe }}</small>
+      {% endif %}
+    {% endfor %}
+    <button type="submit" class="button">Adicionar</button>
+  </form>
+
+  <h1 class="title">
+    To-Dos
+  </h1>
+  <div id="checkedTask">
+      <div id="taskList">
+        {% include "./tasks_table.html" %}
+      </div>
+  </div>
+
+{% endblock content %} {% block js %}
+<script>
+  document.getElementsByName('description').value=null;
+
+  document.body.addEventListener("htmx:configRequest", (event) => {
+    event.detail.headers["X-CSRFToken"] = "{{ csrf_token }}";
+  });
+</script>
+{% endblock js %}
