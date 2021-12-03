@@ -227,3 +227,23 @@ body {
 
   color: #666666;
 }
+
+footer {
+  bottom: 0;
+  margin: 30px auto;
+}
+
+.content-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.875rem;
+
+  line-height: 1.063rem;
+
+  color: #808080;
+}
