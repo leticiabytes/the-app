@@ -1,1 +1,56 @@
-site_name: My Docs
+site_name: The App
+site_description: The App  is a task management application.
+site_url: https://github.com/lvieira268/the-app
+
+repo_name: lvieira268/toDo-django-htmx
+repo_url: https://github.com/lvieira268/the-app
+edit_uri: docs/index.md
+
+theme:
+  name: material
+  logo: img/favicon.png
+  favicon: img/favicon.png
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: green
+      accent: light green
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  features:
+    - header.autohide
+    - navigation.expand
+  icon:
+    repo: fontawesome/brands/github
+  plugins:
+    - git-revision-date-localized:
+      type: date
+    - tags
+    - search
+
+
+markdown_extensions:
+  - pymdownx.snippets
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji # 
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+nav:
+  - Home: index.md
+  - Topic 1:
+    - topic1/note1.md
+    - topic1/note2.md
+    
