@@ -1,0 +1,30 @@
+<div class="list-item">
+  <div class="center">
+    <label 
+    hx-target="#taskList"
+    hx-include="#checkedTask"
+    hx-post="{% if object.complete %} {% url 'toDo:toDo_incomplete' object.pk %} {% else %} {% url 'toDo:toDo_complete' object.pk %} {% endif %}"
+    for="conteiner-check" class="container-check">
+      <input
+        type="checkbox"
+        value="{{ object.pk }}"
+        
+        {% if object.complete %}checked{% endif %}
+      />
+      <span class="checkmark"></span>
+    </label>
+
+    </button>
+    <h1 class="description {% if object.complete %}line-through{% endif %}">
+      {{ object.description }}
+    </h1>
+  </div>
+  <div
+    hx-delete="{% url 'toDo:toDo_delete' object.pk %}"
+    hx-confirm="Deseja mesmo deletar?"
+    hx-target="closest div.list-item"
+    hx-swap="outerHTML swap:300ms"
+  >
+    <i class="fa fa-trash icon"></i>
+  </div>
+</div>
