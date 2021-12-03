@@ -1,0 +1,53 @@
+<!-- base.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon" 
+      href="{% static 'img/favicon.png' %}"
+    />
+    <title>The App</title>
+
+    <!-- Font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    
+    <!-- HTMX -->
+    <script src="https://unpkg.com/htmx.org@1.5.0"></script>
+    <script src="https://unpkg.com/htmx.org@1.5.0/dist/ext/client-side-templates.js"></script>
+
+    {% block css %}{% endblock css %}
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="logo">
+        <img src="{% static 'img/Logo.png' %}" alt="the App">
+        <div class="vl"></div>
+      </div>
+      <div class="date">
+        {% now "d M Y" %}
+      </div>
+    </div>
+    <div class="container">
+      {% block content %}{% endblock content %}
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    {% block js %}{% endblock js %}
+  </body>
+</html>
