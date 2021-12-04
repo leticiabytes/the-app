@@ -62,10 +62,10 @@ body {
   flex-direction: column;
   justify-content: center;
 
-  flex-wrap: wrap;
+  max-width: 55.5rem;
 
   padding: 4.25rem;
-  margin: 0 16rem;
+  margin: auto;
 }
 
 .container > .container-input {
@@ -200,6 +200,7 @@ body {
 
 .center {
   display: flex;
+  padding: 0.625rem;
 }
 
 .description {
