@@ -1,7 +1,7 @@
 from django.db import models
 
 class Post(models.Model):
-    description = models.CharField('descrição', max_length=30)
+    description = models.CharField('descrição', max_length=60)
     complete = models.BooleanField('completo', default=False)
 
     class Meta:
