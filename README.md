@@ -81,7 +81,16 @@ $ python manage.py migrate
 # Inicie o servidor web
 $ python manage.py runserver
 
-# running on 127.0.0.1:8000
+# disponível em 127.0.0.1:8000
+```
+
+### Obtenha mais detalhes com a documantação
+
+```bash
+# Inicie a documentação na sua máquina
+$ mkdocs serve --dev-addr=0.0.0.0:8080
+
+# disponível em 0.0.0.0:8080
 ```
 
 
