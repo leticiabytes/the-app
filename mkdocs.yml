@@ -1,10 +1,14 @@
-site_name: The App
+site_name: The App | Docs
 site_description: The App  is a task management application.
-site_url: https://github.com/lvieira268/the-app
+site_url: http://lvieira268.pythonanywhere.com/
+site_author: Letícia Vieira
 
 repo_name: lvieira268/toDo-django-htmx
 repo_url: https://github.com/lvieira268/the-app
 edit_uri: docs/index.md
+
+# Copyright
+copyright: Copyright &copy; 2021 Letícia Vieira
 
 theme:
   name: material
@@ -15,7 +19,7 @@ theme:
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: deep purple
-      accent: purple
+      accent: deep purple
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
@@ -31,6 +35,10 @@ theme:
   features:
     - header.autohide
     - navigation.expand
+    - content.code.annotate
+    - search.highlight
+    - search.share
+    - search.suggest
   icon:
     repo: fontawesome/brands/github
   plugins:
@@ -41,16 +49,59 @@ theme:
 
 
 markdown_extensions:
-  - pymdownx.snippets
-  - pymdownx.highlight
-  - pymdownx.superfences
+  - admonition
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji # 
+      emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Customization
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/lvieira268
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/lvieira268
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/lvieira268/
+    - icon: fontawesome/brands/instagram
+      link: https://instagram.com/lvieira268
 
 nav:
-  - Home: index.md
-  - Topic 1:
-    - topic1/note1.md
-    - topic1/note2.md
+  - Início: index.md
+  - Sobre:
+    - about/project.md
+    - about/htmx.md
     
